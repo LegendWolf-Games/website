@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LegendWolf</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="home" class="wrapper">
+    <div class="img_center">
+      <a href="https://twitter.com/LegendWolf_Game" target="_blank" >
+        <img src="img/logo.png" alt=""/>
+      </a>
+      <img src="img/legend_icon.png" alt=""/>
+    </div>
+  </div>
+</body>
+<script>
+   window.onload = function () {
+      var mobile_flag = isMobile();
+      if(mobile_flag){
+         document.getElementById("home").style.height = document.documentElement.clientHeight + 'px';
+      }
+   }
+
+   function isMobile() {
+      var userAgentInfo = navigator.userAgent;
+      var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+      var mobile_flag = false;
+      for (var v = 0; v < mobileAgents.length; v++) {
+         if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+            mobile_flag = true;
+            break;
+         }
+      }
+      var screen_width = window.screen.width;
+      var screen_height = window.screen.height;
+
+      if(screen_width < 500 && screen_height < 800){
+         mobile_flag = true;
+      }
+      return mobile_flag;
+   }
+</script>
+</html>
